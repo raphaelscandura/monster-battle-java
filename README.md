@@ -38,6 +38,9 @@ que o outro jogador possa realizar um ataque.
 
 Cada monstro deve conter um tipo/elemento diferente, todos os seis tipos devem possuir uma
 vantagem e uma desvantagem, dessa forma, balanceando o combate:
+
+![elementos](https://i.ibb.co/4g5bLY0/Screenshot-1.jpg)
+
 • Utilize os três tipos acima como referência e acrescente três novos tipos ao seu jogo.
 Mecânica geral da batalha
 Todos os monstros de cada jogador iniciam a batalha com a vida no máximo, a cada rodada,
@@ -48,4 +51,12 @@ deve causar o dobro do dano (super effective!).
 Neste cálculo considere o tipo do ataque e a fraqueza do monstro que está sendo
 atacado
 
+# Ciclo de Vida da Aplicação
+![Ciclo de Vida da Aplicação](https://i.ibb.co/Rpk0dcv/Screenshot-2.jpg)
 
+# Contribuidores
+- Sabrina Fernandes de Sousa
+- Lucas Andrade Zilio
+- Raphael Scandura da Cunha
+- Michael Carlos Damasceno
+- Prospoto pelo professor de Programação Orientada à Objetos, André Santana, no curso de Ciência da Computação na Universidade Anhembi Morumbi
