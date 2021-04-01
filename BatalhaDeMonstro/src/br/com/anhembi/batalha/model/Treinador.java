@@ -5,6 +5,7 @@ package br.com.anhembi.batalha.model;
 public class Treinador {
   private Monstros alpha;
   private Monstros beta;
+  private Monstros omega;
 
   public Treinador(String alpha, String beta) {
       this.alpha = new Monstros(alpha);
@@ -26,7 +27,7 @@ public class Treinador {
   public Monstros getMonstroAtivo() {
     if(alpha.getVida() < 0){
       return alpha;
-    }
-    return beta;
+    } else {return beta;}
+    return omega;
   }
 }
