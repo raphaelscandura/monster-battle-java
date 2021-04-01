@@ -1,4 +1,4 @@
-package br.com.anhembi.control;
+package br.com.anhembi.batalha.control;
 /**
  * 
  * @author Lucas Zillio
