@@ -5,5 +5,11 @@ package br.com.anhembi.batalha.model;
  *
  */
 public class Monstros {
-
+    String tipo;
+    String ataques1;
+    String ataques2;
+    int vida;
+    int força;
+    int defesa;
+    int velocidade;
 }
