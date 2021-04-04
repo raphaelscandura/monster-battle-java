@@ -15,6 +15,8 @@ public class Monstros {
     String fraqueza;
 
     public Monstros(){
+        
+
 
     }
 
