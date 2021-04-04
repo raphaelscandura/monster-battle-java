@@ -15,8 +15,8 @@ public class Monstros {
     int velocidade;
     String fraqueza;
 
-    public Monstros(String nomeMontro, String tipo, String ataques1,String ataques2, int vida, int força, 
-    int defesa, int velocidade){
+    public void classificaMonstros(String nomeMontro, String tipo, String ataques1, String ataques2, int vida,
+    int força, int defesa, int velocidade){
         this.nomeMonstro;
         this.tipo;
         this.ataques1;
@@ -25,7 +25,6 @@ public class Monstros {
         this.força;
         this.defesa;
         this.velocidade;
-        
     }
 
     public int getVida(){
@@ -39,6 +38,15 @@ public class Monstros {
     public String getTipo(){
         return ???;
     }
-
+    
+    public class classificaMonstros {
+        Monstros Fogareu = new Monstros();
+        Monstros Goiabao = new Monstros();
+        Monstros Flair = new Monstros();
+        Monstros Rockin = new Monstros();
+        Monstros Liquides = new Monstros();
+        Monstros Satoshi = new Monstros();
+         
+    }
 
 }
