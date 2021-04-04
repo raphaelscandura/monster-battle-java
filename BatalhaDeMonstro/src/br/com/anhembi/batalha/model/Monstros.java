@@ -12,4 +12,23 @@ public class Monstros {
     int força;
     int defesa;
     int velocidade;
+    String fraqueza;
+
+    public Monstros(){
+
+    }
+
+    public int getVida(){
+        return ???;
+    }
+
+    public int getAtaques(){
+        return ???;
+    }
+
+    public String getTipo(){
+        return ???;
+    }
+
+
 }
