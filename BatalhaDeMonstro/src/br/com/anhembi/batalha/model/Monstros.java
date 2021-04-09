@@ -5,14 +5,15 @@ package br.com.anhembi.batalha.model;
  *
  */
 public class Monstros {
-    private String nomeMonstro;
-    private String status;
-    private String ataques1;
-    private String ataques2;
-    private int temvida;
-    private int força;
-    private int defesa;
-    private int velocidade;
+    protected int Id;
+    protected String nomeMonstro;
+    protected String status;
+    protected String ataques1;
+    protected String ataques2;
+    protected int temvida;
+    protected int forca;
+    protected int defesa;
+    protected int velocidade;
     String fraqueza;
     
         public String getNomeMonstro() {
@@ -55,12 +56,12 @@ public class Monstros {
             this.temvida = vida;
         }
     
-        public int getForça() {
-            return força;
+        public int getForca() {
+            return forca;
         }
     
-        public void setForça(int força) {
-            this.força = força;
+        public void setForça(int forca) {
+            this.forca = forca;
         }
     
         public int getDefesa() {
@@ -91,16 +92,6 @@ public class Monstros {
 
     public String getTipo(){
         return ???;
-    }
-    
-    public class classificaMonstros {
-        Monstros Fogareu = new Monstros();
-        Monstros Goiabao = new Monstros();
-        Monstros Flair = new Monstros();
-        Monstros Rockin = new Monstros();
-        Monstros Liquides = new Monstros();
-        Monstros Satoshi = new Monstros();
-         
     }
 
 }
