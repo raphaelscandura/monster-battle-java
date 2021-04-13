@@ -15,11 +15,8 @@ import br.com.anhembi.batalha.model.*;
  */
 public class CalculoBatalha {
 
-	protected Monstro monstro1;
-	protected Monstro monstro2;
-	protected int prioridadeMonstro1 = 0;
-	protected int prioridadeMonstro2 = 1;
-	protected int prioridadeMaxima = 3;
+	protected Monstros monstro1;
+	protected Monstros monstro2;
 
 	/**
 	 * 
@@ -31,56 +28,46 @@ public class CalculoBatalha {
 	 * 
 	 */
 
-	public CalculoBatalha(Monstro monstro1, Monstro monstro2) {
+	public CalculoBatalha(Monstros monstro1, Monstros monstro2) {
 		this.monstro1 = monstro1;
 		this.monstro2 = monstro2;
 
 	}
 
-	public void turno(String acaoJogador1, String acaoJogador2) {
-		prioridadeMovimento(acaoJogador1, acaoJogador2);
-		recebeDano(monstro1, acaoJogador1, monstro2);
-		recebeDano(monstro2, acaoJogador2, monstro1);
-	}
+	public void prioridaDeAtaque(Monstros monstro1, Ataque ataqueJogador1, Monstros monstro2, Ataque ataqueJogador2) {
 
-	public int prioridadeMovimento(String acaoJogador1, String acaoJogador2) {
-		if (acaoJogador1 == "troca" || acaoJogador2 == "troca") {
-			return prioridadeMaxima;
-		} else {
-			prioridaDeAtaque(monstro1, monstro2);
-		}
-	}
-
-	public int prioridaDeAtaque(Monstro monstro1, Monstro monstro2) {
-
-		if (monstro1.getVelocidade() != monstro2.getVelocidade) {
-			if (monstro1.getVelocidade() > monstro2.getVelocidade) {
-				return prioridadeMonstro1;
-			} else if (monstro1.getVelocidade() < monstro2.getVelocidade) {
-				return prioridadeMonstro2;
+		if (monstro1.getVelocidade() != monstro2.getVelocidade()) {
+			if (monstro1.getVelocidade() > monstro2.getVelocidade()) {
+				recebeDano(monstro1, ataqueJogador1, monstro2);
+			} else if (monstro1.getVelocidade() < monstro2.getVelocidade()) {
+				recebeDano(monstro2, ataqueJogador2, monstro1);
 			}
-		} else if (monstro1.getAtaque() != monstro2.getAtaque()) {
-			if (monstro1.getAtaque() > monstro2.getAtaque()) {
-				return prioridadeMonstro1;
-			} else if (monstro1.getAtaque() < monstro2.getAtaque()) {
-				return prioridadeMonstro2;
+		} else if (monstro1.getForca() != monstro2.getForca()) {
+			if (monstro1.getForca() > monstro2.getForca()) {
+				recebeDano(monstro1, ataqueJogador1, monstro2);
+			} else if (monstro1.getForca() < monstro2.getForca()) {
+				recebeDano(monstro2, ataqueJogador2, monstro1);
 			}
 		} else if (monstro1.getDefesa() != monstro2.getDefesa()) {
 			if (monstro1.getDefesa() > monstro2.getDefesa()) {
-				return prioridadeMonstro1;
+				recebeDano(monstro1, ataqueJogador1, monstro2);
 			} else if (monstro1.getDefesa() < monstro2.getDefesa()) {
-				return prioridadeMonstro2;
+				recebeDano(monstro2, ataqueJogador2, monstro1);
 			}
 		} else {
 			System.out.println("Nenhum critério de desempate, a batalha travou!");
-			return 5;
 		}
 	}
 
-	public void recebeDano(Monstro monstro1, Ataque poder, Monstro monstro2) {
-		if (monstro1.getTipo() == monstro2.getFraqueza()) {
-			monstro2.setVida(monstro1.vida -= ((monstro1.ataque - monstro2.defesa) * 0.375) + (poder.getForca() * 0.1));
+	public void recebeDano(Monstros monstroA, Ataque ataque, Monstros monstroB) {
+		int vidaMonstro = monstroA.getVida();
+		int ataqueMonstro = monstroA.getForca();
+		int defesaMonstro = monstroB.getDefesa();
+		int poderAtaque = ataque.getPoder();
+		
+		if (monstroA.getTipo() == monstroB.getFraqueza()) {
+			monstroB.settemVida(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
 		}
-		monstro2.setVida(monstro1.vida -= ((monstro1.ataque - monstro2.defesa) * 0.75) + (poder.getForca() * 0.1));
+		monstroB.settemVida(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
 	}
 }

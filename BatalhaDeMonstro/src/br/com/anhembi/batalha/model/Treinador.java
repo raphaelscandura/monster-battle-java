@@ -2,7 +2,7 @@ package br.com.anhembi.batalha.model;
 /**
  * @author Michael Carlos
  */
-public class Treinador {
+public class Treinador{
   private Monstros alpha;
   private Monstros beta;
   private Monstros omega;
@@ -30,4 +30,8 @@ public class Treinador {
     } else {return beta;}
     return omega;
   }
+
+	public void trocaMonstro() {
+		
+	}
 }

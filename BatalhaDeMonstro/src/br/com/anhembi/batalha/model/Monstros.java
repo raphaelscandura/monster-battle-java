@@ -60,7 +60,7 @@ public class Monstros {
             return forca;
         }
     
-        public void setForça(int forca) {
+        public void setForca(int forca) {
             this.forca = forca;
         }
     
@@ -79,6 +79,9 @@ public class Monstros {
         public void setVelocidade(int velocidade) {
             this.velocidade = velocidade;
         }
+        
+        public String getFraqueza() {
+        	return fraqueza;
         
     }
 
