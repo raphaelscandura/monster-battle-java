@@ -13,6 +13,7 @@ public class Monstros {
     private int força;
     private int defesa;
     private int velocidade;
+    private int hp;
     String fraqueza;
     
         public String getNomeMonstro() {
@@ -21,6 +22,13 @@ public class Monstros {
     
         public void setNomeMonstro(String nomeMonstro) {
             this.nomeMonstro = nomeMonstro;
+        }
+
+        public int getHp() {
+            return hp;
+        }
+        public void setHp(int hp) {
+            this.hp = hp;
         }
     
         public String getstatus() {
@@ -78,29 +86,19 @@ public class Monstros {
         public void setVelocidade(int velocidade) {
             this.velocidade = velocidade;
         }
+
+        public int getVida(){
+            return 0;
+        }
+
+        public int getAtaques(){
+            return 0;
+        }
+
+        public String getTipo(){
+            return "";
+        }
         
     }
 
-    public int getVida(){
-        return ???;
-    }
 
-    public int getAtaques(){
-        return ???;
-    }
-
-    public String getTipo(){
-        return ???;
-    }
-    
-    public class classificaMonstros {
-        Monstros Fogareu = new Monstros();
-        Monstros Goiabao = new Monstros();
-        Monstros Flair = new Monstros();
-        Monstros Rockin = new Monstros();
-        Monstros Liquides = new Monstros();
-        Monstros Satoshi = new Monstros();
-         
-    }
-
-}

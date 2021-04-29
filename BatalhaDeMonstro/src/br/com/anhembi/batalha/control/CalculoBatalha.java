@@ -4,7 +4,7 @@ import br.com.anhembi.batalha.model.*;
 
 /**
  * 
- * Classe responsável pelos métodos de calculo de dano e prioridade durante a
+ * Classe responsï¿½vel pelos mï¿½todos de calculo de dano e prioridade durante a
  * batalha
  * 
  * @author Raphael Scandura
@@ -15,8 +15,8 @@ import br.com.anhembi.batalha.model.*;
  */
 public class CalculoBatalha {
 
-	protected Monstro monstro1;
-	protected Monstro monstro2;
+	protected Monstros monstro1;
+	protected Monstros monstro2;
 	protected int prioridadeMonstro1 = 0;
 	protected int prioridadeMonstro2 = 1;
 	protected int prioridadeMaxima = 3;
@@ -31,7 +31,7 @@ public class CalculoBatalha {
 	 * 
 	 */
 
-	public CalculoBatalha(Monstro monstro1, Monstro monstro2) {
+	public CalculoBatalha(Monstros monstro1, Monstros monstro2) {
 		this.monstro1 = monstro1;
 		this.monstro2 = monstro2;
 
@@ -51,7 +51,7 @@ public class CalculoBatalha {
 		}
 	}
 
-	public int prioridaDeAtaque(Monstro monstro1, Monstro monstro2) {
+	public int prioridaDeAtaque(Monstros monstro1, Monstros monstro2) {
 
 		if (monstro1.getVelocidade() != monstro2.getVelocidade) {
 			if (monstro1.getVelocidade() > monstro2.getVelocidade) {
@@ -72,7 +72,7 @@ public class CalculoBatalha {
 				return prioridadeMonstro2;
 			}
 		} else {
-			System.out.println("Nenhum critério de desempate, a batalha travou!");
+			System.out.println("Nenhum critï¿½rio de desempate, a batalha travou!");
 			return 5;
 		}
 	}
