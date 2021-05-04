@@ -2,9 +2,16 @@ package br.com.anhembi.batalha.model;
 /**
  * @author Michael Carlos Damasceno Lima
  */
+<<<<<<< HEAD
 public class Treinador {
   private Monstros monstro[] = new Monstros[3];
   private int numeroDeMonstros = 0;
+=======
+public class Treinador{
+  private Monstros alpha;
+  private Monstros beta;
+  private Monstros omega;
+>>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
 
   public Treinador(Monstros alpha, Monstros beta, Monstros omega) {
       this.monstro[0] = alpha;
@@ -46,4 +53,8 @@ public class Treinador {
     	return monstro[2];
     }
   }
+
+	public void trocaMonstro() {
+		
+	}
 }

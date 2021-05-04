@@ -5,6 +5,7 @@ package br.com.anhembi.batalha.model;
  *
  */
 public class Monstros {
+<<<<<<< HEAD
     private String nomeMonstro;
     private String status;
     private String ataques1;
@@ -14,11 +15,24 @@ public class Monstros {
     private int defesa;
     private int velocidade;
     private int hp;
+=======
+    protected int Id;
+    protected String nomeMonstro;
+    protected String status;
+    protected String ataques1;
+    protected String ataques2;
+    protected int temvida;
+    protected int ph;
+    protected int forca;
+    protected int defesa;
+    protected int velocidade;
+>>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
     String fraqueza;
-    
+
         public String getNomeMonstro() {
             return nomeMonstro;
         }
+<<<<<<< HEAD
     
         public void setNomeMonstro(String nomeMonstro) {
             this.nomeMonstro = nomeMonstro;
@@ -31,61 +45,52 @@ public class Monstros {
             this.hp = hp;
         }
     
+=======
+
+>>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
         public String getstatus() {
             return status;
         }
-    
-        public void setstatus(String status) {
-            this.status = status;
-        }
-    
+
         public String getAtaques1() {
             return ataques1;
         }
-    
-        public void setAtaques1(String ataques1) {
-            this.ataques1 = ataques1;
-        }
-    
+
         public String getAtaques2() {
             return ataques2;
         }
-    
-        public void setAtaques2(String ataques2) {
-            this.ataques2 = ataques2;
+        public int getph() {
+            return ph;
         }
-    
+        public void setph(int ph) {
+            this.ph = new Novoph;
+        }
+
         public int gettemVida() {
             return temvida;
         }
-    
-        public void settemVida(int vida) {
-            this.temvida = vida;
+
+        public int getForca() {
+            return forca;
         }
-    
-        public int getForça() {
-            return força;
-        }
-    
-        public void setForça(int força) {
-            this.força = força;
-        }
-    
+
         public int getDefesa() {
             return defesa;
         }
-    
-        public void setDefesa(int defesa) {
-            this.defesa = defesa;
-        }
-    
+
         public int getVelocidade() {
             return velocidade;
         }
+<<<<<<< HEAD
     
         public void setVelocidade(int velocidade) {
             this.velocidade = velocidade;
         }
+=======
+
+
+    }
+>>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
 
         public int getVida(){
             return 0;
@@ -95,10 +100,15 @@ public class Monstros {
             return 0;
         }
 
+<<<<<<< HEAD
         public String getTipo(){
             return "";
         }
         
+=======
+    public String getTipo(){
+        return ???;
+>>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
     }
 
 
