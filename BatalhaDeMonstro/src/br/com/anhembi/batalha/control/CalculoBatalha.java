@@ -31,12 +31,13 @@ public class CalculoBatalha {
 				recebeDano(monstro1, ataqueJogador1, monstro2);
 			}
 		} else {
-			System.out.println("Nenhum crit�rio de desempate, a batalha travou!");
+			recebeDano(monstro1, ataqueJogador1, monstro2);
+			recebeDano(monstro2, ataqueJogador2, monstro1);
 		}
 	}
 
 	public void recebeDano(Monstros monstroA, Ataque ataque, Monstros monstroB) {
-		int vidaMonstro = monstroA.getVida();
+		double vidaMonstro = monstroA.getHp();
 		int ataqueMonstro = monstroA.getForca();
 		int defesaMonstro = monstroB.getDefesa();
 		int poderAtaque = ataque.getPoder();
