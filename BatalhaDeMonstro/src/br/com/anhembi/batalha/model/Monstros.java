@@ -11,6 +11,7 @@ public class Monstros {
     protected String ataques1;
     protected String ataques2;
     protected int temvida;
+    protected int ph;
     protected int forca;
     protected int defesa;
     protected int velocidade;
@@ -30,6 +31,12 @@ public class Monstros {
 
         public String getAtaques2() {
             return ataques2;
+        }
+        public int getph() {
+            return ph;
+        }
+        public void setph(int ph) {
+            this.ph = new Novoph;
         }
 
         public int gettemVida() {
