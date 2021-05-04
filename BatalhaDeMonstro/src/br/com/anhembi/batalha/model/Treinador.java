@@ -1,17 +1,13 @@
 package br.com.anhembi.batalha.model;
+
+import br.com.anhembi.batalha.control.Ataque;
+
 /**
  * @author Michael Carlos Damasceno Lima
  */
-
 public class Treinador {
   private Monstros monstro[] = new Monstros[3];
   private int numeroDeMonstros = 0;
-
-  public Treinador(Monstros alpha, Monstros beta, Monstros omega) {
-      this.monstro[0] = alpha;
-      this.monstro[1] = beta;
-      this.monstro[2] = omega;
-  }
   
   public Treinador() {
 
@@ -43,22 +39,26 @@ public class Treinador {
     	return monstro[2];
     }
   }
-  
+
   public void getAllMonstros() {
-	  for(int i = 0; i < 3; i++) {
-		  Monstros monstroX = monstro[i];
-			System.out.println("ID: " + monstroX.getID());
-    		System.out.println("Nome: " + monstroX.getNomeMonstro());
-    		System.out.println("Tipo: " + monstroX.getTipo());
-    		System.out.println("HP: " + monstroX.getHP());
-    		System.out.println("Ataque: " + monstroX.getForca());
-    		System.out.println("Defesa: " + monstroX.getDefesa());
-    		System.out.println("Velocidade: " + monstroX.getVelocidade() + "\n");
-		  
-	  }
+    for(int i = 0; i < 3; i++) {
+        Monstros monstroX = monstro[i];
+          System.out.println("ID: " + monstroX.getID());
+          System.out.println("Nome: " + monstroX.getNomeMonstro());
+          System.out.println("Tipo: " + monstroX.getTipo());
+          System.out.println("HP: " + monstroX.getHp());
+          System.out.println("Ataque: " + monstroX.getForca());
+          System.out.println("Defesa: " + monstroX.getDefesa());
+          System.out.println("Velocidade: " + monstroX.getVelocidade() + "\n");
+
+    }
   }
 
-	public void trocaMonstro() {
-		
-	}
+  public Ataque escolherAtaque(int i) { 
+    if(i == 0) {
+      return this.getMonstroAtivo().getAtaques1();
+    } else {
+      return this.getMonstroAtivo().getAtaques2();
+    }
+  }
 }

@@ -50,7 +50,7 @@ public class Monstros {
             return this.ataques2;
         }
         
-        public double getHP() {
+        public double getHp() {
             return this.hp;
         }
         
@@ -78,7 +78,7 @@ public class Monstros {
 	    	return this.fraqueza;
 	    }
 	    
-	    public void setHP(double hp) {
+	    public void setHp(double hp) {
 	    	this.hp = hp;
 	    }
 }

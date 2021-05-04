@@ -58,7 +58,7 @@ public class FabricaMonstro {
     		System.out.println("ID: " + monstro.getID());
     		System.out.println("Nome: " + monstro.getNomeMonstro());
     		System.out.println("Tipo: " + monstro.getTipo());
-    		System.out.println("HP: " + monstro.getHP());
+    		System.out.println("HP: " + monstro.getHp());
     		System.out.println("Ataque: " + monstro.getForca());
     		System.out.println("Defesa: " + monstro.getDefesa());
     		System.out.println("Velocidade: " + monstro.getVelocidade() + "\n");

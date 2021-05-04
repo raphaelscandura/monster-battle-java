@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuEscolhas {
-	public static void main(String[] args) {
+
+	public void escolhas(Treinador treinador1, Treinador treinador2) {
 
         int escolhaJogador = 0;
-        Treinador treinador1 = new Treinador();
-        Treinador treinador2 = new Treinador();
 
         Scanner respostaEscolha = new Scanner(System.in);
 
@@ -19,13 +18,13 @@ public class MenuEscolhas {
         for(int i = 1; i <= 2; i++){
         	
         	FabricaMonstro monstro = new FabricaMonstro();
-        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 1 à 6) \n");
+        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 1 ï¿½ 6) \n");
         	monstro.instanciarMonstros();
         	monstro.imprimirMonstros();
         	ArrayList<Monstros> listaDeMonstros = monstro.getMonstros();
         	int cont = 1;
                 do{
-                    System.out.println("Escolha seu " + cont +"º Monstro: \n");
+                    System.out.println("Escolha seu " + cont +"ï¿½ Monstro: \n");
                     escolhaJogador = respostaEscolha.nextInt();
                     Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador-1);
                     if(i == 1) {

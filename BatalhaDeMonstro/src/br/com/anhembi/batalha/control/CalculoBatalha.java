@@ -31,7 +31,7 @@ public class CalculoBatalha {
 				recebeDano(monstro1, ataqueJogador1, monstro2);
 			}
 		} else {
-			System.out.println("Nenhum critério de desempate, a batalha travou!");
+			System.out.println("Nenhum critï¿½rio de desempate, a batalha travou!");
 		}
 	}
 
@@ -42,8 +42,8 @@ public class CalculoBatalha {
 		int poderAtaque = ataque.getPoder();
 
 		if (monstroA.getTipo() == monstroB.getFraqueza()) {
-			monstroB.setHP(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
+			monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
 		}
-		monstroB.setHP(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
+		monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
 	}
 }
