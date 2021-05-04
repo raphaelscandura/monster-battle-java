@@ -17,6 +17,20 @@ public class Monstros {
     protected int velocidade;
     String fraqueza;
 
+public CriaMonstros(int ID, String nomeMonstro, String status, String ataqueX, String ataqueY,
+    int hp, int temvida, int forca, int defesa,int velocidade){
+    this.Id = id;
+    this.nomeMonstro = nome;
+    this.ataqueX = ataqueX;
+    this.ataqueY = ataqueY
+    this.temvida = vida;
+    this.hp = vida * 5;
+    this.forca = forca;
+    this.defesa = defesa;
+    this.velocidade = velocidade;
+    this.fraqueza = fraqueza; 
+    }
+
         public String getNomeMonstro() {
             return nomeMonstro;
         }
@@ -69,4 +83,8 @@ public class Monstros {
         return ???;
     }
 
+    
+    }
+
+    
 
