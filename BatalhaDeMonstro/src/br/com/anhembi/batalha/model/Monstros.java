@@ -8,8 +8,8 @@ public class Monstros {
     protected int Id;
     protected String nomeMonstro;
     protected String status;
-    protected String ataques1;
-    protected String ataques2;
+    protected String ataquesX;
+    protected String ataquesY;
     protected int temvida;
     protected int ph;
     protected int forca;
