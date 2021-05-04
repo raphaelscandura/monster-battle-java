@@ -2,16 +2,10 @@ package br.com.anhembi.batalha.model;
 /**
  * @author Michael Carlos Damasceno Lima
  */
-<<<<<<< HEAD
+
 public class Treinador {
   private Monstros monstro[] = new Monstros[3];
   private int numeroDeMonstros = 0;
-=======
-public class Treinador{
-  private Monstros alpha;
-  private Monstros beta;
-  private Monstros omega;
->>>>>>> d56d462379f69ff325cbc0df9d3da1bd19f77aab
 
   public Treinador(Monstros alpha, Monstros beta, Monstros omega) {
       this.monstro[0] = alpha;
@@ -32,10 +26,6 @@ public class Treinador{
     return getMonstroAtivo().getVida();
   }
 
-//  public ???? getMonsterAttack(){
-//    return getMonstroAtivo().getAttack();
-//  }
-
   public String getMonstroTipo() {
     return getMonstroAtivo().getTipo();
   }
@@ -52,6 +42,20 @@ public class Treinador{
     } else {
     	return monstro[2];
     }
+  }
+  
+  public void getAllMonstros() {
+	  for(int i = 0; i < 3; i++) {
+		  Monstros monstroX = monstro[i];
+			System.out.println("ID: " + monstroX.getID());
+    		System.out.println("Nome: " + monstroX.getNomeMonstro());
+    		System.out.println("Tipo: " + monstroX.getTipo());
+    		System.out.println("HP: " + monstroX.getHP());
+    		System.out.println("Ataque: " + monstroX.getForca());
+    		System.out.println("Defesa: " + monstroX.getDefesa());
+    		System.out.println("Velocidade: " + monstroX.getVelocidade() + "\n");
+		  
+	  }
   }
 
 	public void trocaMonstro() {

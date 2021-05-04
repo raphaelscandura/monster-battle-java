@@ -47,7 +47,7 @@ public abstract class Movimento {
 
 	public void prioridadeMovimento(Treinador treinador1, Treinador treinador2) {
 		if (movimentoJogador1 != "troca" && movimentoJogador2 != "troca") {
-			CalculoBatalha calculoTurno = new CalculoBatalha(monstro1, monstro2);
+			CalculoBatalha calculoTurno = new CalculoBatalha();
 			calculoTurno.prioridaDeAtaque(monstro1, ataqueJogador1, monstro2, ataqueJogador2);
 		} else if (movimentoJogador1 == "troca" && movimentoJogador2 != "troca") {
 			treinador1.trocaMonstro();

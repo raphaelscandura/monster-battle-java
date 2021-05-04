@@ -31,16 +31,16 @@ public class Interface {
                     System.out.print("["+treinadorY.getMonstro(1).getNomeMonstro()+"]");
                 }
                 if(y == 2 && x == 6){
-                    System.out.print(treinadorX.getMonstro(1).getHp() + "HP");
+                    System.out.print(treinadorX.getMonstro(1).getHP() + "HP");
                 }
                 if(y == 2 && x == 30){
-                    System.out.print(treinadorY.getMonstro(1).getHp() + "HP");
+                    System.out.print(treinadorY.getMonstro(1).getHP() + "HP");
                 }
                 if(y == 4 && x == 5){
-                    System.out.print("(ง'̀-'́)ง");
+                    System.out.print("(à¸‡'Ì€-'Ì�)à¸‡");
                 }
                 if(y == 4 && x == 25){
-                    System.out.print("ᕕ( ᐛ )ᕗ");
+                    System.out.print("á••( á�› )á•—");
                 }
                 /**
                  * if(y == 4 && x == 3) {

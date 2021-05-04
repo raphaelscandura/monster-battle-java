@@ -1,90 +1,86 @@
 package br.com.anhembi.batalha.model;
+
+import br.com.anhembi.batalha.control.*;
+
 /**
  * 
  * @author Sabrina Fernandes
  *
  */
 public class Monstros {
-    protected int Id;
+    protected int Id = 0;
+    protected String tipo;
     protected String nomeMonstro;
-    protected String status;
-    protected String ataquesX;
-    protected String ataquesY;
-    protected int temvida;
-    protected int ph;
+    protected Ataque ataques1;
+    protected Ataque ataques2;
+    protected double hp;
+    protected int vida;
     protected int forca;
     protected int defesa;
     protected int velocidade;
-    String fraqueza;
-
-public CriaMonstros(int ID, String nomeMonstro, String status, String ataqueX, String ataqueY,
-    int hp, int temvida, int forca, int defesa,int velocidade){
-    this.Id = id;
-    this.nomeMonstro = nome;
-    this.ataqueX = ataqueX;
-    this.ataqueY = ataqueY
-    this.temvida = vida;
-    this.hp = vida * 5;
-    this.forca = forca;
-    this.defesa = defesa;
-    this.velocidade = velocidade;
-    this.fraqueza = fraqueza; 
-    }
+    protected String fraqueza;
+    
+    	public Monstros(int id, String nome, String tipo, Ataque ataque1, Ataque ataque2, int vida, int forca, int defesa, int velocidade, String fraqueza) {
+    		this.Id = id;
+    		this.tipo = tipo;
+    		this.nomeMonstro = nome;
+    		this.ataques1 = ataque1;
+    		this.ataques2 = ataque2;
+    		this.vida = vida;
+    		this.hp = vida * 5;
+    		this.forca = forca;
+    		this.defesa = defesa;
+    		this.velocidade = velocidade;
+    		this.fraqueza = fraqueza;
+    	}
+    
+    	public int getID() {
+    		return this.Id;
+    	}
 
         public String getNomeMonstro() {
-            return nomeMonstro;
-        }
-        public String getstatus() {
-            return status;
+            return this.nomeMonstro;
         }
 
-        public String getAtaques1() {
-            return ataques1;
+        public Ataque getAtaques1() {
+            return this.ataques1;
         }
 
-        public String getAtaques2() {
-            return ataques2;
+        public Ataque getAtaques2() {
+            return this.ataques2;
         }
-        public int getph() {
-            return ph;
+        
+        public double getHP() {
+            return this.hp;
         }
-        public void setph(int ph) {
-            this.ph = new Novoph;
-        }
-
-        public int gettemVida() {
-            return temvida;
-        }
-
+        
         public int getForca() {
-            return forca;
+            return this.forca;
         }
 
         public int getDefesa() {
-            return defesa;
+            return this.defesa;
         }
 
         public int getVelocidade() {
-            return velocidade;
+            return this.velocidade;
         }
-
-
-    }
 
         public int getVida(){
-            return 0;
+            return this.vida;
         }
 
-        public int getAtaques(){
-            return 0;
-        }
+	    public String getTipo(){
+	        return this.tipo;
+	    }
+	    
+	    public String getFraqueza() {
+	    	return this.fraqueza;
+	    }
+	    
+	    public void setHP(double hp) {
+	    	this.hp = hp;
+	    }
+}
 
-    public String getTipo(){
-        return ???;
-    }
-
-    
-    }
-
-    
 
