@@ -8,36 +8,39 @@ import br.com.anhembi.batalha.control.Ataque;
 public class Treinador {
   private Monstros monstro[] = new Monstros[3];
   private int numeroDeMonstros = 0;
-  
-  public Treinador() {
+  private int monstrosVivos = 0;
+  private String nomeTreinador;
 
+
+  public Treinador(String nome) {
+    this.nomeTreinador = nome;
   }
-  
+
   public void addMonstro(Monstros monstrosEscolhido) {
 	  monstro[numeroDeMonstros] = monstrosEscolhido;
 	  numeroDeMonstros++;
+    monstrosVivos++;
   }
 
-  public int getMonsterVida(){
-    return getMonstroAtivo().getVida();
-  }
-
-  public String getMonstroTipo() {
-    return getMonstroAtivo().getTipo();
-  }
-  
-  public Monstros getMonstro(int i) {
-	  return this.monstro[i];
+  public String getNomeTreinador() {
+    return this.nomeTreinador;
   }
 
   public Monstros getMonstroAtivo() {
-    if(monstro[0].getVida() < 0){
+    if(this.monstro[0].getHp() > 0){
+      monstrosVivos--;
       return monstro[0];
-    } else if(monstro[1].getVida() < 0){
+    } else if(monstro[1].getHp() > 0){
+      monstrosVivos--;
     	return monstro[1];
     } else {
+      monstrosVivos--;
     	return monstro[2];
     }
+  }
+
+  public int getMonstrosVivos() {
+    return monstrosVivos;
   }
 
   public void getAllMonstros() {
@@ -50,11 +53,10 @@ public class Treinador {
           System.out.println("Ataque: " + monstroX.getForca());
           System.out.println("Defesa: " + monstroX.getDefesa());
           System.out.println("Velocidade: " + monstroX.getVelocidade() + "\n");
-
     }
   }
 
-  public Ataque escolherAtaque(int i) { 
+  public Ataque escolherAtaque(int i) {
     if(i == 0) {
       return this.getMonstroAtivo().getAtaques1();
     } else {
