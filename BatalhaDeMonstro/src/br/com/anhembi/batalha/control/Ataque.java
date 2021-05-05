@@ -11,7 +11,7 @@ package br.com.anhembi.batalha.control;
  *
  */
 
-public class Ataque extends Movimento {
+public class Ataque {
 	
 	private int poderAtaque;
 	private String tipoAtaque;

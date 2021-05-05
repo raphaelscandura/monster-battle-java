@@ -12,9 +12,6 @@ public class Jogo {
         MenuBatalha menuBatalha = new MenuBatalha(x,y);
 
         menuEscolhas.escolhas(x,y);
-        menuBatalha.imprimirTela();
-        menuBatalha.imprimirTela();
-        menuBatalha.imprimirTela();
-        menuBatalha.imprimirTela();
+        menuBatalha.luta();
     }
 }

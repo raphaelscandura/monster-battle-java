@@ -1,5 +1,7 @@
 package br.com.anhembi.batalha.model;
 
+import java.util.Scanner;
+
 import br.com.anhembi.batalha.control.Ataque;
 
 /**
@@ -63,7 +65,7 @@ public class Treinador {
   public void getAllMonstros() {
     for(int i = 0; i < 3; i++) {
         Monstros monstroX = monstro[i];
-          System.out.println("ID: " + monstroX.getID());
+          System.out.println("ID: " + i);
           System.out.println("Nome: " + monstroX.getNomeMonstro());
           System.out.println("Tipo: " + monstroX.getTipo());
           System.out.println("HP: " + monstroX.getHp());
@@ -79,5 +81,13 @@ public class Treinador {
     } else {
       return this.getMonstroAtivo().getAtaques2();
     }
+  }
+  
+  public void trocaMonstro() {
+	  Scanner scan  = new Scanner(System.in);
+	  System.out.println("Qual monstro você gostaria de colocar agora?");
+	  this.getAllMonstros();
+      int input = scan.nextInt();
+      this.setMonstroAtivo(input);      
   }
 }
