@@ -29,6 +29,7 @@ public class MenuBatalha {
         String input;
         boolean lutando = true;
         while (lutando){
+        	turno = true;
         	imprimirTela();
             
             System.out.println("\n\nJogador 1 deseja \nAtacar(1) \nTrocar de Monstro(2)");
@@ -44,7 +45,6 @@ public class MenuBatalha {
             }
             turno = false;
             imprimirTela();
-            turno = true;
             
             System.out.println("\n\nJogador 2 deseja \nAtacar(1) \nTrocar de Monstro(2)");
             int escolhaAtaque = scan.nextInt();
@@ -58,7 +58,6 @@ public class MenuBatalha {
             	ataqueEscolhidoY = null;
             }
 
-            atacar.prioridaDeAtaque(treinadorY.getMonstroAtivo(), ataqueEscolhidoY, treinadorX.getMonstroAtivo(), ataqueEscolhidoX);
             turno = !turno;
             
             animacaoAtaqueYS();

@@ -53,6 +53,7 @@ public class CalculoBatalha {
 			int poderAtaque = ataque.getPoder();
 			
 			if (monstroA.getTipo() == monstroB.getFraqueza()) {
+				//50 - ((20 - 14) * 0.375) + (17 * 0.1)) 
 				monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
 			}
 			monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
