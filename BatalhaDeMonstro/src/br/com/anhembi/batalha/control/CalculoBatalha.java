@@ -37,7 +37,7 @@ public class CalculoBatalha {
 	}
 
 	public void recebeDano(Monstros monstroA, Ataque ataque, Monstros monstroB) {
-		double vidaMonstro = monstroA.getHp();
+		double vidaMonstro = monstroB.getHp();
 		int ataqueMonstro = monstroA.getForca();
 		int defesaMonstro = monstroB.getDefesa();
 		int poderAtaque = ataque.getPoder();
