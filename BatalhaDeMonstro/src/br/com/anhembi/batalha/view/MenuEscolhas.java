@@ -19,18 +19,20 @@ public class MenuEscolhas {
         	
         	FabricaMonstro monstro = new FabricaMonstro();
         	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 1 � 6) \n");
-        	monstro.instanciarMonstros();
-        	monstro.imprimirMonstros();
+        	monstro.instanciarMonstros();        	
         	ArrayList<Monstros> listaDeMonstros = monstro.getMonstros();
         	int cont = 1;
                 do{
+                	monstro.imprimirMonstros();
                     System.out.println("Escolha seu " + cont +"� Monstro: \n");
                     escolhaJogador = respostaEscolha.nextInt();
-                    Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador-1);
+                    Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador);
                     if(i == 1) {
                     	treinador1.addMonstro(monstroEscolhido);
+                    	listaDeMonstros.remove(monstroEscolhido);
                     }else if(i == 2) {
                     	treinador2.addMonstro(monstroEscolhido);
+                    	listaDeMonstros.remove(monstroEscolhido);
                     }
                     
                     cont++;

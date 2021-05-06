@@ -35,28 +35,33 @@ public class CalculoBatalha {
 				recebeDano(monstro1, ataqueJogador1, monstro2);
 				recebeDano(monstro2, ataqueJogador2, monstro1);
 			}
-		}else if(ataqueJogador1 == null) {
+		} else if (ataqueJogador1 == null) {
 			recebeDano(monstro2, ataqueJogador2, monstro1);
-		}else if(ataqueJogador2 == null) {
+		} else if (ataqueJogador2 == null) {
 			recebeDano(monstro1, ataqueJogador1, monstro2);
-		}else {
-			
+		} else {
+
 		}
 
 	}
 
 	public void recebeDano(Monstros monstroA, Ataque ataque, Monstros monstroB) {
-		if(ataque != null) {
+		if (ataque != null) {
+			double vidaMonstroAtacante = monstroA.getHp();
 			double vidaMonstro = monstroB.getHp();
 			int ataqueMonstro = monstroA.getForca();
 			int defesaMonstro = monstroB.getDefesa();
 			int poderAtaque = ataque.getPoder();
-			
-			if (monstroA.getTipo() == monstroB.getFraqueza()) {
-				//50 - ((20 - 14) * 0.375) + (17 * 0.1)) 
-				monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
+			if (vidaMonstroAtacante > 0) {
+				if (monstroA.getTipo() == monstroB.getFraqueza()) {
+					monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
+				}
+				monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
+				if(vidaMonstro <= 0) {
+					System.out.println("\nSEU MONSTRO MORREU! ESCOLHA OUTRO PARA LUTAR!");
+				}
 			}
-			monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
-		}	
+
+		}
 	}
 }
