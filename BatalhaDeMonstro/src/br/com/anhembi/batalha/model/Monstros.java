@@ -8,16 +8,16 @@ import br.com.anhembi.batalha.control.*;
  *
  */
 public class Monstros {
-    protected String tipo;
-    protected String nomeMonstro;
-    protected Ataque ataques1;
-    protected Ataque ataques2;
-    protected double hp;
-    protected int vida;
-    protected int forca;
-    protected int defesa;
-    protected int velocidade;
-    protected String fraqueza;
+    private String tipo;
+    private String nomeMonstro;
+    private Ataque ataques1;
+    private Ataque ataques2;
+    private double hp;
+    private int vida;
+    private int forca;
+    private int defesa;
+    private int velocidade;
+    private String fraqueza;
     
     	public Monstros(String nome, String tipo, Ataque ataque1, Ataque ataque2, int vida, int forca, int defesa, int velocidade, String fraqueza) {
     		this.tipo = tipo;
@@ -32,10 +32,6 @@ public class Monstros {
     		this.fraqueza = fraqueza;
     	}
     
-    	public int getID() {
-    		return this.Id;
-    	}
-
         public String getNomeMonstro() {
             return this.nomeMonstro;
         }

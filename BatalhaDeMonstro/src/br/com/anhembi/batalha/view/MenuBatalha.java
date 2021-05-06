@@ -11,7 +11,6 @@ public class MenuBatalha {
 	private Treinador treinadorY;
 	private int width = 50;
 	private int height = 9;
-	private int alinhar = 0;
 	private boolean turno = true;
 
 	public MenuBatalha(Treinador treinadorX, Treinador treinadorY) {
@@ -59,23 +58,23 @@ public class MenuBatalha {
 
 			turno = !turno;
 
-			animacaoAtaqueYS();
-			freezeScreen(500);
-			animacaoAtaqueY();
-			freezeScreen(500);
-			animacaoAtaqueYS();
-			freezeScreen(500);
-			animacaoAtaqueY();
-			freezeScreen(1000);
-
-			animacaoAtaqueXS();
-			freezeScreen(500);
-			animacaoAtaqueX();
-			freezeScreen(500);
-			animacaoAtaqueXS();
-			freezeScreen(500);
-			animacaoAtaqueX();
-			freezeScreen(1000);
+//			animacaoAtaqueYS();
+//			freezeScreen(500);
+//			animacaoAtaqueY();
+//			freezeScreen(500);
+//			animacaoAtaqueYS();
+//			freezeScreen(500);
+//			animacaoAtaqueY();
+//			freezeScreen(1000);
+//
+//			animacaoAtaqueXS();
+//			freezeScreen(500);
+//			animacaoAtaqueX();
+//			freezeScreen(500);
+//			animacaoAtaqueXS();
+//			freezeScreen(500);
+//			animacaoAtaqueX();
+//			freezeScreen(1000);
 
 			atacar.prioridaDeAtaque(treinadorY.getMonstroAtivo(), ataqueEscolhidoY, treinadorX.getMonstroAtivo(),
 					ataqueEscolhidoX);
@@ -298,7 +297,7 @@ public class MenuBatalha {
 	}
 
 	public void anuncioVitoria(Treinador treinador) {
-		System.out.println("\n\n\n FIM DE JOGO! O VENCEDOR É \n" + treinador.getNomeTreinador());
+		System.out.println("\n\n\nFIM DE JOGO! O VENCEDOR É \n" + treinador.getNomeTreinador());
 	}
 
 }

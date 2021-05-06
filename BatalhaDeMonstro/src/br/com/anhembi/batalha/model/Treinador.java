@@ -43,10 +43,12 @@ public class Treinador {
 	public boolean temMonstroVivo() {
 		int monstrosVivos = this.monstrosVivos;
 		for (int i = 0; i < 3; i++) {
+		if(monstro[i] != null) {
 			if (monstro[i].getHp() <= 0) {
-				monstro[i] = null;
 				monstrosVivos--;
 			}
+		}
+		
 		}
 		if (monstrosVivos == 0) {
 			return false;
@@ -65,7 +67,7 @@ public class Treinador {
 	public void getAllMonstros() {
 		for (int i = 0; i < 3; i++) {
 			Monstros monstroX = monstro[i];
-			if (monstroX != null) {
+			if (monstroX.getHp() > 0) {
 				String vida = String.format("%.2f", monstroX.getHp());
 				System.out.println("ID: " + i);
 				System.out.println("Nome: " + monstroX.getNomeMonstro());
@@ -87,10 +89,19 @@ public class Treinador {
 	}
 
 	public void trocaMonstro() {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Qual monstro você gostaria de colocar agora?");
-		this.getAllMonstros();
-		int input = scan.nextInt();
-		this.setMonstroAtivo(input);
+		if(temMonstroVivo()) {
+			boolean verificacao = false;
+			do {
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Qual monstro você gostaria de colocar agora?");
+				this.getAllMonstros();
+				int input = scan.nextInt();
+				if(this.setMonstroAtivo(input)) {
+					verificacao = true;
+				}	
+				
+			}while (verificacao == false);
+		}
+
 	}
 }

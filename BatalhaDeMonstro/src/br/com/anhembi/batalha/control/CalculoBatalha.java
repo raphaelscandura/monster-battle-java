@@ -57,9 +57,6 @@ public class CalculoBatalha {
 					monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.375) + (poderAtaque * 0.1));
 				}
 				monstroB.setHp(vidaMonstro -= ((ataqueMonstro - defesaMonstro) * 0.75) + (poderAtaque * 0.1));
-				if(vidaMonstro <= 0) {
-					System.out.println("\nSEU MONSTRO MORREU! ESCOLHA OUTRO PARA LUTAR!");
-				}
 			}
 
 		}
