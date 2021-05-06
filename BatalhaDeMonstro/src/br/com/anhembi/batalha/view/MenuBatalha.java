@@ -24,7 +24,6 @@ public class MenuBatalha {
 		;
 		Scanner scan = new Scanner(System.in);
 		CalculoBatalha atacar = new CalculoBatalha();
-		String input;
 		boolean lutando = true;
 		while (lutando) {
 			turno = true;
@@ -58,23 +57,23 @@ public class MenuBatalha {
 
 			turno = !turno;
 
-//			animacaoAtaqueYS();
-//			freezeScreen(500);
-//			animacaoAtaqueY();
-//			freezeScreen(500);
-//			animacaoAtaqueYS();
-//			freezeScreen(500);
-//			animacaoAtaqueY();
-//			freezeScreen(1000);
-//
-//			animacaoAtaqueXS();
-//			freezeScreen(500);
-//			animacaoAtaqueX();
-//			freezeScreen(500);
-//			animacaoAtaqueXS();
-//			freezeScreen(500);
-//			animacaoAtaqueX();
-//			freezeScreen(1000);
+			animacaoAtaqueYS();
+			freezeScreen(100);
+			animacaoAtaqueY();
+			freezeScreen(100);
+			animacaoAtaqueYS();
+			freezeScreen(100);
+			animacaoAtaqueY();
+			freezeScreen(500);
+
+			animacaoAtaqueXS();
+			freezeScreen(100);
+			animacaoAtaqueX();
+			freezeScreen(100);
+			animacaoAtaqueXS();
+			freezeScreen(100);
+			animacaoAtaqueX();
+			freezeScreen(500);
 
 			atacar.prioridaDeAtaque(treinadorY.getMonstroAtivo(), ataqueEscolhidoY, treinadorX.getMonstroAtivo(),
 					ataqueEscolhidoX);
@@ -127,10 +126,10 @@ public class MenuBatalha {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 5) {
-					System.out.print("(à¸‡'Ì€-'Ì�)à¸‡");
+					System.out.print("((ง'̀-'́)ง");
 				}
 				if (y == 4 && x == 25) {
-					System.out.print("á••( á�› )á•—");
+					System.out.print("ᕕ( ᐛ )ᕗ");
 				}
 				if (turno) {
 					if (y == 6 && x == 3) {
@@ -181,10 +180,10 @@ public class MenuBatalha {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 23) {
-					System.out.print("(à¸‡'Ì€-'Ì�)-");
+					System.out.print("((ง'̀-'́)-");
 				}
 				if (y == 4 && x == 25) {
-					System.out.print("*á••( O.O )á•—");
+					System.out.print("*ᕕ( 0-0 )ᕗ");
 				}
 			}
 			System.out.print("\n");
@@ -215,10 +214,10 @@ public class MenuBatalha {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 23) {
-					System.out.print("(à¸‡'Ì€-'Ì�)à¸‡");
+					System.out.print("((ง'̀-'́)ง");
 				}
 				if (y == 4 && x == 25) {
-					System.out.print("á••( á�› )á•—");
+					System.out.print("ᕕ( ᐛ )ᕗ");
 				}
 			}
 			System.out.print("\n");
@@ -249,10 +248,10 @@ public class MenuBatalha {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 1) {
-					System.out.print("(à¸‡'o`)à¸‡*");
+					System.out.print("((ง0-0 )ง*");
 				}
 				if (y == 4 && x == 3) {
-					System.out.print("--( á�› )á•—");
+					System.out.print("--( ᐛ )ᕗ");
 				}
 			}
 			System.out.print("\n");
@@ -283,10 +282,10 @@ public class MenuBatalha {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 1) {
-					System.out.print("(à¸‡'Ì€-'Ì�)à¸‡");
+					System.out.print("((ง'̀-'́)ง");
 				}
 				if (y == 4 && x == 3) {
-					System.out.print("á••( á�› )á•—");
+					System.out.print("ᕕ( ᐛ )ᕗ");
 				}
 			}
 			System.out.print("\n");
