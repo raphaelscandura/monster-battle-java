@@ -1,6 +1,4 @@
 package br.com.anhembi.batalha.model;
-
-import br.com.anhembi.batalha.view.MenuBatalha;
 import br.com.anhembi.batalha.view.*;
 
 
@@ -10,8 +8,8 @@ public class Jogo {
         Treinador y = new Treinador();
         MenuEscolhas menuEscolhas = new MenuEscolhas();
         MenuBatalha menuBatalha = new MenuBatalha(x,y);
-
-        menuEscolhas.escolhas(x,y);
+        menuEscolhas.nomearJogadores(x, y);
+        menuEscolhas.escolherMonstros(x,y);
         menuBatalha.luta();
     }
 }

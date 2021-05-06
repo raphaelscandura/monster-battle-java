@@ -2,6 +2,10 @@ package br.com.anhembi.batalha.control;
 
 import br.com.anhembi.batalha.model.Monstros;
 
+/**
+ * Raphael Scandura
+ */
+
 public class CalculoBatalha {
 
 	public void prioridaDeAtaque(Monstros monstro1, Ataque ataqueJogador1, Monstros monstro2, Ataque ataqueJogador2) {
@@ -60,7 +64,6 @@ public class CalculoBatalha {
 				}
 				
 			}
-
 		}
 	}
 }

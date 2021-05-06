@@ -6,6 +6,10 @@ import br.com.anhembi.batalha.control.Ataque;
 import br.com.anhembi.batalha.control.CalculoBatalha;
 import br.com.anhembi.batalha.model.Treinador;
 
+/**
+ * @author Michael Carlos Damasceno Lima
+ */
+
 public class MenuBatalha {
 	private Treinador treinadorX;
 	private Treinador treinadorY;
@@ -19,8 +23,8 @@ public class MenuBatalha {
 	}
 
 	public void luta() {
-		Ataque ataqueEscolhidoX = new Ataque(0, "", "nomeAtaque");
-		Ataque ataqueEscolhidoY = new Ataque(0, "", "nomeAtaque");
+		Ataque ataqueEscolhidoX;
+		Ataque ataqueEscolhidoY;
 		;
 		Scanner scan = new Scanner(System.in);
 		CalculoBatalha atacar = new CalculoBatalha();
@@ -29,11 +33,11 @@ public class MenuBatalha {
 			turno = true;
 			imprimirTela();
 
-			System.out.println("\n\nJogador 1 deseja \nAtacar(1) \nTrocar de Monstro(2)");
+			System.out.println("\n\n" + treinadorX.getNomeTreinador() + " deseja \nAtacar(1) \nTrocar de Monstro(2)");
 			int escolha = scan.nextInt();
 			if (escolha == 1) {
 				System.gc();
-				System.out.println("\n\nJogador 1 ecolha seu ataque!");
+				System.out.println("\n\n" + treinadorX.getNomeTreinador() +  " escolha seu ataque!");
 				int control = scan.nextInt();
 				ataqueEscolhidoX = treinadorX.escolherAtaque(control);
 			} else {
@@ -43,11 +47,11 @@ public class MenuBatalha {
 			turno = false;
 			imprimirTela();
 
-			System.out.println("\n\nJogador 2 deseja \nAtacar(1) \nTrocar de Monstro(2)");
+			System.out.println("\n\n" + treinadorY.getNomeTreinador() + "deseja \nAtacar(1) \nTrocar de Monstro(2)");
 			int escolhaAtaque = scan.nextInt();
 			if (escolhaAtaque == 1) {
 				System.gc();
-				System.out.println("\n\nJogador 2 ecolha seu ataque!");
+				System.out.println("\n\n" +  treinadorY.getNomeTreinador() + " escolha seu ataque!");
 				int control = scan.nextInt();
 				ataqueEscolhidoY = treinadorY.escolherAtaque(control);
 			} else {
@@ -57,23 +61,8 @@ public class MenuBatalha {
 
 			turno = !turno;
 
-			animacaoAtaqueYS();
-			freezeScreen(100);
-			animacaoAtaqueY();
-			freezeScreen(100);
-			animacaoAtaqueYS();
-			freezeScreen(100);
-			animacaoAtaqueY();
-			freezeScreen(500);
+            animacao();
 
-			animacaoAtaqueXS();
-			freezeScreen(100);
-			animacaoAtaqueX();
-			freezeScreen(100);
-			animacaoAtaqueXS();
-			freezeScreen(100);
-			animacaoAtaqueX();
-			freezeScreen(500);
 
 			atacar.prioridaDeAtaque(treinadorY.getMonstroAtivo(), ataqueEscolhidoY, treinadorX.getMonstroAtivo(),
 					ataqueEscolhidoX);
@@ -96,6 +85,26 @@ public class MenuBatalha {
 
 		}
 	}
+
+    public void animacao() {
+        animacaoAtaqueYS();
+        freezeScreen(100);
+        animacaoAtaqueY();
+        freezeScreen(100);
+        animacaoAtaqueYS();
+        freezeScreen(100);
+        animacaoAtaqueY();
+        freezeScreen(500);
+
+        animacaoAtaqueXS();
+        freezeScreen(100);
+        animacaoAtaqueX();
+        freezeScreen(100);
+        animacaoAtaqueXS();
+        freezeScreen(100);
+        animacaoAtaqueX();
+        freezeScreen(500);
+    }
 
 	public void freezeScreen(int i) {
 		try {

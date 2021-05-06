@@ -5,9 +5,12 @@ import br.com.anhembi.batalha.model.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * @author Rafael Scandura
+ */
 public class MenuEscolhas {
 
-	public void escolhas(Treinador treinador1, Treinador treinador2) {
+        public void escolherMonstros(Treinador treinadorX, Treinador treinadorY) {
 
         int escolhaJogador = 0;
 
@@ -22,28 +25,39 @@ public class MenuEscolhas {
         	monstro.instanciarMonstros();        	
         	ArrayList<Monstros> listaDeMonstros = monstro.getMonstros();
         	int cont = 1;
-                do{
+                do {
                 	monstro.imprimirMonstros();
                     System.out.println("Escolha seu " + cont +"� Monstro: \n");
                     escolhaJogador = respostaEscolha.nextInt();
                     Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador);
                     if(i == 1) {
-                    	treinador1.addMonstro(monstroEscolhido);
+                        treinadorX.addMonstro(monstroEscolhido);
                     	listaDeMonstros.remove(monstroEscolhido);
                     }else if(i == 2) {
-                    	treinador2.addMonstro(monstroEscolhido);
+                        treinadorY.addMonstro(monstroEscolhido);
                     	listaDeMonstros.remove(monstroEscolhido);
                     }
-                    
                     cont++;
-                }while(cont <= 3);
+                } while(cont <= 3);
         }
         
-        System.out.println("\nMonstros do treinador 1");
-        treinador1.getAllMonstros();
+        System.out.println("\nMonstros do" + treinadorX.getNomeTreinador());
+        treinadorX.getAllMonstros();
         System.out.println("-------------------------------------------------------");
-        System.out.println("\nMonstros do treinador 2");
-        treinador2.getAllMonstros();    
+        System.out.println("\nMonstros do " + treinadorY.getNomeTreinador());
+        treinadorY.getAllMonstros();    
         
 	}
+
+        public void nomearJogadores(Treinador treinadorX, Treinador treinadorY) {
+                System.out.println("Jogador 1\nQual é o seu nome?");
+                Scanner scan = new Scanner(System.in);
+                
+                String nome = scan.nextLine();
+                treinadorX.setNomeTreinador(nome);
+                
+                System.out.println("Jogador 2\nQual é o seu nome?");
+                nome = scan.nextLine();
+                treinadorY.setNomeTreinador(nome);
+        }
 }

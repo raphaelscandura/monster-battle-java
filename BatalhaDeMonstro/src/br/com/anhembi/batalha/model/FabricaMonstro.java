@@ -3,53 +3,46 @@ package br.com.anhembi.batalha.model;
 import br.com.anhembi.batalha.control.*;
 import java.util.*;
 
+/**
+ * @author Michael Carlos DamascenoLima
+ */
 public class FabricaMonstro {
-
-    /**
-     * this.Id = 2;
-     * this.nomeMonstro = "Goiabao";
-     * this.status = "Grama" ;
-     * this.ataques1 = "Pinhão" ;
-     * this.ataques2 = "Suco de Fruta";
-     * this.temvida = 10;
-     * this.forca = 17;
-     * this.defesa = 14;
-     * this.velocidade = 8;
-     * @throws ClassNotFoundException
-     */
 	
 	ArrayList<Monstros> listaMonstros = new ArrayList<Monstros>();
+    private Ataque ataqueX = new Ataque();
+    private Ataque ataqueY = new Ataque();
+    Monstros monstro;
     
     public void instanciarMonstros() {
-        Ataque ataque = new Ataque(17, "eletrico", "Golpe do Trov�o");
-        Ataque ataque0 = new Ataque(15, "voador", "Mergulho do Alto");
-        Monstros monstro = new Monstros("Flair", "eletrico", ataque, ataque0, 7, 20, 8, 20, "pedra");
+        ataqueX.setAtaque(17, "eletrico", "Golpe do Trov�o");
+        ataqueY.setAtaque(15, "voador", "Mergulho do Alto");
+        monstro = new Monstros("Flair", "eletrico", ataqueX, ataqueY, 7, 20, 8, 20, "pedra");
         listaMonstros.add(monstro);        
         
-        Ataque ataque1 = new Ataque(17, "fogo", "Soco Flamejante");
-        Ataque ataque2 = new Ataque(7, "grama", "Grama Quente");
-        Monstros monstro1 = new Monstros("Fogareu", "fogo", ataque1, ataque2, 15, 18, 9, 13, "agua"); 
-        listaMonstros.add(monstro1);
+        ataqueX.setAtaque(17, "fogo", "Soco Flamejante");
+        ataqueY.setAtaque(7, "grama", "Grama Quente");
+        monstro = new Monstros("Fogareu", "fogo", ataqueX, ataqueY, 15, 18, 9, 13, "agua"); 
+        listaMonstros.add(monstro);
     
-        Ataque ataque3 = new Ataque(12, "grama", "Pinhão");
-        Ataque ataque4 = new Ataque(16, "agua", "Suco de Fruta");
-        Monstros monstro2 = new Monstros("Goiab�o", "grama", ataque3, ataque4, 10, 17, 14, 8, "fogo");
-        listaMonstros.add(monstro2);
+        ataqueX.setAtaque(12, "grama", "Pinhão");
+        ataqueY.setAtaque(16, "agua", "Suco de Fruta");
+        monstro = new Monstros("Goiab�o", "grama", ataqueX, ataqueY, 10, 17, 14, 8, "fogo");
+        listaMonstros.add(monstro);
     
-        Ataque ataque5 = new Ataque(17, "agua", "Fonte Gelada");
-        Ataque ataque6 = new Ataque(16, "fogo", "Magma");
-        Monstros monstro3 = new Monstros("Liquides", "agua", ataque5, ataque6, 14, 15, 15, 13, "grama");
-        listaMonstros.add(monstro3);
+        ataqueX.setAtaque(17, "agua", "Fonte Gelada");
+        ataqueY.setAtaque(16, "fogo", "Magma");
+        monstro = new Monstros("Liquides", "agua", ataqueX, ataqueY, 14, 15, 15, 13, "grama");
+        listaMonstros.add(monstro);
     
-        Ataque ataque7 = new Ataque(16, "pedra", "Soco Petrificador");
-        Ataque ataque8 = new Ataque(19, "eletrico", "Eletrocutar");
-        Monstros monstro4 = new Monstros("Rocking", "pedra", ataque7, ataque8, 12, 19, 17, 10, "voador");
-        listaMonstros.add(monstro4);
+        ataqueX.setAtaque(16, "pedra", "Soco Petrificador");
+        ataqueY.setAtaque(19, "eletrico", "Eletrocutar");
+        monstro = new Monstros("Rocking", "pedra", ataqueX, ataqueY, 12, 19, 17, 10, "voador");
+        listaMonstros.add(monstro);
     
-        Ataque ataque9 = new Ataque(11, "voador", "Espada de Vento");
-        Ataque ataque10 = new Ataque(14, "pedra", "Ciclone Bomba");
-        Monstros monstro5 = new Monstros("Satoshi", "voador", ataque9, ataque10, 11, 14, 10, 18, "eletrico");
-        listaMonstros.add(monstro5);
+        ataqueX.setAtaque(11, "voador", "Espada de Vento");
+        ataqueY.setAtaque(14, "pedra", "Ciclone Bomba");
+        monstro = new Monstros("Satoshi", "voador", ataqueX, ataqueY, 11, 14, 10, 18, "eletrico");
+        listaMonstros.add(monstro);
     } 
     
     public void imprimirMonstros() {

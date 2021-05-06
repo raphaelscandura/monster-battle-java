@@ -10,8 +10,8 @@ import br.com.anhembi.batalha.control.*;
 public class Monstros {
     private String tipo;
     private String nomeMonstro;
-    private Ataque ataques1;
-    private Ataque ataques2;
+    private Ataque ataquesX;
+    private Ataque ataquesY;
     private double hp;
     private int vida;
     private int forca;
@@ -19,11 +19,11 @@ public class Monstros {
     private int velocidade;
     private String fraqueza;
     
-    	public Monstros(String nome, String tipo, Ataque ataque1, Ataque ataque2, int vida, int forca, int defesa, int velocidade, String fraqueza) {
+    	public Monstros(String nome, String tipo, Ataque ataqueX, Ataque ataqueY, int vida, int forca, int defesa, int velocidade, String fraqueza) {
     		this.tipo = tipo;
     		this.nomeMonstro = nome;
-    		this.ataques1 = ataque1;
-    		this.ataques2 = ataque2;
+    		this.ataquesX = ataqueX;
+    		this.ataquesY = ataqueY;
     		this.vida = vida;
     		this.hp = vida * 5;
     		this.forca = forca;
@@ -37,11 +37,11 @@ public class Monstros {
         }
 
         public Ataque getAtaques1() {
-            return this.ataques1;
+            return this.ataquesX;
         }
 
         public Ataque getAtaques2() {
-            return this.ataques2;
+            return this.ataquesY;
         }
         
         public double getHp() {
