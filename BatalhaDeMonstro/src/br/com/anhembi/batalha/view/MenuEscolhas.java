@@ -1,4 +1,4 @@
-package br.com.anhembi.batalha.view;
+﻿package br.com.anhembi.batalha.view;
 
 import br.com.anhembi.batalha.model.*;
 
@@ -21,13 +21,13 @@ public class MenuEscolhas {
         for(int i = 1; i <= 2; i++){
         	
         	FabricaMonstro monstro = new FabricaMonstro();
-        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 1 � 6) \n");
+        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 0 ao 5) \n");
         	monstro.instanciarMonstros();        	
         	ArrayList<Monstros> listaDeMonstros = monstro.getMonstros();
         	int cont = 1;
                 do {
                 	monstro.imprimirMonstros();
-                    System.out.println("Escolha seu " + cont +"� Monstro: \n");
+                    System.out.println("Escolha seu " + cont +" Monstro: \n");
                     escolhaJogador = respostaEscolha.nextInt();
                     Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador);
                     if(i == 1) {

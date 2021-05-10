@@ -89,7 +89,7 @@ public class Treinador {
 			boolean verificacao = false;
 			do {
 				Scanner scan = new Scanner(System.in);
-				System.out.println("Qual monstro voc� gostaria de colocar agora?");
+				System.out.println("\nQual monstro voce gostaria de colocar agora?");
 				this.getAllMonstros();
 				int input = scan.nextInt();
 				if(this.setMonstroAtivo(input)) {

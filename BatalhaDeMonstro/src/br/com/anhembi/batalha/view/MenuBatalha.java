@@ -1,4 +1,4 @@
-package br.com.anhembi.batalha.view;
+﻿package br.com.anhembi.batalha.view;
 
 import java.util.Scanner;
 import java.io.IOException;
@@ -6,7 +6,6 @@ import java.io.IOException;
 import br.com.anhembi.batalha.control.Ataque;
 import br.com.anhembi.batalha.control.CalculoBatalha;
 import br.com.anhembi.batalha.model.Treinador;
-
 /**
  * @author Michael Carlos Damasceno Lima
  */
@@ -116,7 +115,8 @@ public class MenuBatalha {
 	}
 
 	public void imprimirTela() {
-		Runtime.getRuntime().exec("clear");
+		System.out.print("\u000C");
+
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
 		}
@@ -170,7 +170,8 @@ public class MenuBatalha {
 	}
 
 	public void animacaoAtaqueX() {
-		Runtime.getRuntime().exec("clear");
+		System.out.print("\u000C");
+
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
 		}
@@ -204,7 +205,8 @@ public class MenuBatalha {
 	}
 
 	public void animacaoAtaqueXS() {
-		Runtime.getRuntime().exec("clear");
+		System.out.print("\u000C");
+
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
 		}
@@ -238,7 +240,8 @@ public class MenuBatalha {
 	}
 
 	public void animacaoAtaqueY() {
-		Runtime.getRuntime().exec("clear");
+		System.out.println("\u000C");
+
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
 		}
@@ -272,7 +275,7 @@ public class MenuBatalha {
 	}
 
 	public void animacaoAtaqueYS() {
-		Runtime.getRuntime().exec("clear");
+		System.out.print("\u000C");
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
 		}
