@@ -5,7 +5,6 @@ import br.com.anhembi.batalha.control.*;
 /**
  * 
  * @author Sabrina Fernandes
- *
  */
 public class Monstros {
     private String tipo;

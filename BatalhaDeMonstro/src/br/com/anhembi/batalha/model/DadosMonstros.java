@@ -1,6 +1,8 @@
-package br.com.anhembi.batalha.model;
+﻿package br.com.anhembi.batalha.model;
+
 
 import br.com.anhembi.batalha.control.*;
+
 import java.util.*;
 
 /**
@@ -31,7 +33,7 @@ public class DadosMonstros {
     
         ataqueX.setAtaque(12, "grama", "Pinhão");
         ataqueY.setAtaque(16, "agua", "Suco de Fruta");
-        monstro = new Monstros("Goiab�o", "grama", ataqueX, ataqueY, 10, 17, 14, 8, "fogo");
+        monstro = new Monstros("Goiabao", "grama", ataqueX, ataqueY, 10, 17, 14, 8, "fogo");
         listaMonstros.add(monstro);
     
         ataqueX.setAtaque(17, "agua", "Fonte Gelada");
