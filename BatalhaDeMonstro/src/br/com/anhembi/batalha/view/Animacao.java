@@ -1,6 +1,7 @@
 package br.com.anhembi.batalha.view;
 
 import br.com.anhembi.batalha.model.Treinador;
+import br.com.anhembi.batalha.model.Monstros;
 
 public class Animacao {
     private int width;
@@ -21,7 +22,61 @@ public class Animacao {
 		try {
 			Thread.sleep(i);
 		} catch (Exception e) {
-            
+
+		}
+	}
+
+    public void imprimirTela(Monstros monstroTurnoX, Monstros monstroTurnoY, boolean turno) {
+		System.out.print("\033[H\033[2J");
+		for (int i = 1; i < this.width; i++) {
+			System.out.print("-");
+		}
+		for (int y = 0; y < this.height; y++) {
+			for (int x = 0; x < this.width; x++) {
+				System.out.print(" ");
+				if (y == 1 && x == 3) {
+					System.out.print("[" + monstroTurnoX.getNomeMonstro() + "]");
+				}
+				if (y == 1 && x + monstroTurnoX.getNomeMonstro().length() == 23) {
+					System.out.print("[" + monstroTurnoY.getNomeMonstro() + "]");
+				}
+				if (y == 2 && x == 4) {
+					System.out.print(monstroTurnoX.getHp() + "HP");
+				}
+				if (y == 2 && x + monstroTurnoX.getNomeMonstro().length() == 28) {
+					System.out.print(monstroTurnoY.getHp() + "HP");
+				}
+				if (y == 4 && x == 5) {
+					System.out.print("((ง'̀-'́)ง");
+				}
+				if (y == 4 && x == 19) {
+					System.out.print("ᕕ( ᐛ )ᕗ");
+				}
+				if (turno) {
+					if (y == 6 && x == 3) {
+						System.out.print("1 -> " + monstroTurnoX.getAtaques1().getNome());
+						System.out.print("[" + monstroTurnoX.getAtaques1().getPoder() + "]");
+					}
+
+					if (y == 7 && x == 3) {
+						System.out.print("2 -> " + monstroTurnoX.getAtaques2().getNome());
+						System.out.print("[" + monstroTurnoX.getAtaques2().getPoder() + "]");
+					}
+				} else {
+					if (y == 6 && x == 29) {
+						System.out.print(monstroTurnoY.getAtaques1().getNome());
+						System.out.print("[" + monstroTurnoY.getAtaques1().getPoder() + "]" + " <- 1");
+					}
+					if (y == 7 && x == 29) {
+						System.out.print(monstroTurnoY.getAtaques2().getNome());
+						System.out.print("[" + monstroTurnoY.getAtaques2().getPoder() + "]" + " <- 2");	
+					}
+				}
+			}
+			System.out.print("\n");
+		}
+		for (int i = 1; i < this.width; i++) {
+			System.out.print("-");
 		}
 	}
 
@@ -48,10 +103,10 @@ public class Animacao {
                     if (y == 2 && x == 4) {
                         System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
+                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 28) {
                         System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 4 && x == 23) {
+                    if (y == 4 && x == 17) {
                         System.out.print(animacoesX[bonecoX]); 
                         if(bonecoX == 1){
                             bonecoX = 0;
@@ -59,7 +114,7 @@ public class Animacao {
                             bonecoX = 1;
                         }
                     }
-                    if (y == 4 && x == 25) {
+                    if (y == 4 && x == 19) {
                         System.out.print(animacoesY[bonecoY]);
                         if(bonecoY == 2){
                             bonecoY = 0;
@@ -101,7 +156,7 @@ public class Animacao {
                     if (y == 2 && x == 4) {
                         System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
+                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 28) {
                         System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
                     }
                     if (y == 4 && x == 3) {
@@ -158,13 +213,13 @@ public class Animacao {
                     if (y == 2 && x == 4) {
                         System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
+                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 28) {
                         System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
                     }
                     if (y == 4 && x + (troca.length()/2) == 7) {
                         System.out.print(troca);
                     }
-                    if (y == 4 && x + troca.length() == 25) {
+                    if (y == 4 && x + troca.length() == 19) {
                         System.out.print("ᕕ( ᐛ )ᕗ");
                     }
                 }
@@ -197,13 +252,13 @@ public class Animacao {
                     if (y == 2 && x == 4) {
                         System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
+                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 28) {
                         System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
                     }
                     if (y == 4 && x + 3 == 7) {
                         System.out.print("((ง'̀-'́)ง");
                     }
-                    if (y == 4 && x + 8 == 25) {
+                    if (y == 4 && x + 8 == 19) {
                         System.out.print(troca);
                     }
                 }
@@ -235,13 +290,13 @@ public class Animacao {
                     if (y == 2 && x == 4) {
                         System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
                     }
-                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
+                    if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 28) {
                         System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
                     }
                     if (y == 4 && x + (troca.length()/2) == 7) {
                         System.out.print(troca);
                     }
-                    if (y == 4 && x + troca.length() == 25) {
+                    if (y == 4 && x + troca.length() == 10) {
                         System.out.print(troca);
                     }
                 }

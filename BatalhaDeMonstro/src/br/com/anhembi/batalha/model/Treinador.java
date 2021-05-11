@@ -95,7 +95,6 @@ public class Treinador {
 				if(this.setMonstroAtivo(input)) {
 					verificacao = true;
 				}	
-				
 			}while (verificacao == false);
 		}
 	}
