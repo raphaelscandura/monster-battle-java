@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import br.com.anhembi.batalha.control.Ataque;
 import br.com.anhembi.batalha.control.CalculoBatalha;
+import br.com.anhembi.batalha.model.Monstros;
 import br.com.anhembi.batalha.model.Treinador;
 
 /**
@@ -16,6 +17,8 @@ public class MenuBatalha {
 	private int width = 50;
 	private int height = 9;
 	private boolean turno = true;
+	public MenuBatalha() {
+	}
 
 	public MenuBatalha(Treinador treinadorX, Treinador treinadorY) {
 		this.treinadorX = treinadorX;
@@ -25,13 +28,15 @@ public class MenuBatalha {
 	public void luta() {
 		Ataque ataqueEscolhidoX;
 		Ataque ataqueEscolhidoY;
-		;
+		int prioridadeDeAtaque;
 		Scanner scan = new Scanner(System.in);
 		CalculoBatalha atacar = new CalculoBatalha();
-		boolean lutando = true;
+		boolean lutando = true, efetivoX, efetivoY;
 		while (lutando) {
 			turno = true;
-			imprimirTela();
+			Monstros monstroTurnoX = treinadorX.getMonstroAtivo();
+			Monstros monstroTurnoY = treinadorY.getMonstroAtivo();
+			imprimirTela(monstroTurnoX, monstroTurnoY);
 
 			System.out.println("\n\n" + treinadorX.getNomeTreinador() + " deseja \nAtacar(1) \nTrocar de Monstro(2)");
 			int escolha = scan.nextInt();
@@ -45,9 +50,9 @@ public class MenuBatalha {
 				ataqueEscolhidoX = null;
 			}
 			turno = false;
-			imprimirTela();
 
-			System.out.println("\n\n" + treinadorY.getNomeTreinador() + "deseja \nAtacar(1) \nTrocar de Monstro(2)");
+			imprimirTela(monstroTurnoX, monstroTurnoY);
+			System.out.println("\n\n" + treinadorY.getNomeTreinador() + " deseja \nAtacar(1) \nTrocar de Monstro(2)");
 			int escolhaAtaque = scan.nextInt();
 			if (escolhaAtaque == 1) {
 				System.gc();
@@ -60,8 +65,11 @@ public class MenuBatalha {
 			}
 
 			turno = !turno;
-
-            animacao();
+			prioridadeDeAtaque = atacar.getPrioridade(treinadorX.getMonstroAtivo(), ataqueEscolhidoX, treinadorY.getMonstroAtivo(), ataqueEscolhidoY);
+			
+			efetivoX = atacar.ehSuperEfetivo(treinadorX.getMonstroAtivo(), treinadorY.getMonstroAtivo());
+			efetivoY = atacar.ehSuperEfetivo(treinadorY.getMonstroAtivo(), treinadorX.getMonstroAtivo());
+            animacao(ataqueEscolhidoX, ataqueEscolhidoY, prioridadeDeAtaque, efetivoX, efetivoY);
 
 
 			atacar.prioridaDeAtaque(treinadorY.getMonstroAtivo(), ataqueEscolhidoY, treinadorX.getMonstroAtivo(),
@@ -86,24 +94,34 @@ public class MenuBatalha {
 		}
 	}
 
-    public void animacao() {
-        animacaoAtaqueYS();
-        freezeScreen(100);
-        animacaoAtaqueY();
-        freezeScreen(100);
-        animacaoAtaqueYS();
-        freezeScreen(100);
-        animacaoAtaqueY();
-        freezeScreen(500);
+    public void animacao(Ataque ataqueEscolhidoX, Ataque ataqueEscolhidoY, int prioridadeDeAtaque, boolean ehSuperfetivoX, boolean ehSuperfetivoY) {
+		Animacao animacao = new Animacao(this.width, this.height, this.treinadorX, this.treinadorY);
+		if(ataqueEscolhidoX == null && ataqueEscolhidoY == null){
+			System.out.println("null + null");
+			animacao.switchXY();
+		}
+		if(ataqueEscolhidoX != null && ataqueEscolhidoY == null){
+			System.out.println("!null + null");
+			animacao.switchY();
+			animacao.ataqueX(ehSuperfetivoY);
+		}
+		if(ataqueEscolhidoX == null && ataqueEscolhidoY != null){
+			System.out.println("null + !null");
+			animacao.switchX();
+			animacao.ataqueY(ehSuperfetivoX);
+		}
+		if(ataqueEscolhidoX != null && ataqueEscolhidoY != null){
+			System.out.println("!null + !null");
+			if(prioridadeDeAtaque == 1){
+				animacao.ataqueX(ehSuperfetivoY);
+				animacao.ataqueY(ehSuperfetivoX);
+			} 
+			else {
+				animacao.ataqueY(ehSuperfetivoX);
+				animacao.ataqueX(ehSuperfetivoY);
+			}
+		}
 
-        animacaoAtaqueXS();
-        freezeScreen(100);
-        animacaoAtaqueX();
-        freezeScreen(100);
-        animacaoAtaqueXS();
-        freezeScreen(100);
-        animacaoAtaqueX();
-        freezeScreen(500);
     }
 
 	public void freezeScreen(int i) {
@@ -114,7 +132,7 @@ public class MenuBatalha {
 		}
 	}
 
-	public void imprimirTela() {
+	public void imprimirTela(Monstros monstroTurnoX, Monstros monstroTurnoY) {
 		System.out.print("\033[H\033[2J");
 		for (int i = 1; i < this.width; i++) {
 			System.out.print("-");
@@ -125,13 +143,13 @@ public class MenuBatalha {
 				if (y == 1 && x == 3) {
 					System.out.print("[" + treinadorX.getMonstroAtivo().getNomeMonstro() + "]");
 				}
-				if (y == 1 && x == 22) {
+				if (y == 1 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 23) {
 					System.out.print("[" + treinadorY.getMonstroAtivo().getNomeMonstro() + "]");
 				}
-				if (y == 2 && x == 6) {
+				if (y == 2 && x == 4) {
 					System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
 				}
-				if (y == 2 && x == 30) {
+				if (y == 2 && x + treinadorX.getMonstroAtivo().getNomeMonstro().length() == 24) {
 					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
 				}
 				if (y == 4 && x == 5) {
@@ -142,22 +160,22 @@ public class MenuBatalha {
 				}
 				if (turno) {
 					if (y == 6 && x == 3) {
-						System.out.print("1 -> " + treinadorX.getMonstroAtivo().getAtaques1().getNome());
-						System.out.print("[" + treinadorX.getMonstroAtivo().getAtaques1().getPoder() + "]");
+						System.out.print("1 -> " + monstroTurnoX.getAtaques1().getNome());
+						System.out.print("[" + monstroTurnoX.getAtaques1().getPoder() + "]");
 					}
 
 					if (y == 7 && x == 3) {
-						System.out.print("2 -> " + treinadorX.getMonstroAtivo().getAtaques2().getNome());
-						System.out.print("[" + treinadorX.getMonstroAtivo().getAtaques2().getPoder() + "]");
+						System.out.print("2 -> " + monstroTurnoX.getAtaques2().getNome());
+						System.out.print("[" + monstroTurnoX.getAtaques2().getPoder() + "]");
 					}
 				} else {
 					if (y == 6 && x == 29) {
-						System.out.print(treinadorY.getMonstroAtivo().getAtaques1().getNome());
-						System.out.print("[" + treinadorY.getMonstroAtivo().getAtaques1().getPoder() + "]" + " <- 1");
+						System.out.print(monstroTurnoY.getAtaques1().getNome());
+						System.out.print("[" + monstroTurnoY.getAtaques1().getPoder() + "]" + " <- 1");
 					}
 					if (y == 7 && x == 29) {
-						System.out.print(treinadorY.getMonstroAtivo().getAtaques2().getNome());
-						System.out.print("[" + treinadorY.getMonstroAtivo().getAtaques2().getPoder() + "]" + " <- 2");
+						System.out.print(monstroTurnoY.getAtaques2().getNome());
+						System.out.print("[" + monstroTurnoY.getAtaques2().getPoder() + "]" + " <- 2");
 					}
 				}
 			}
@@ -167,145 +185,7 @@ public class MenuBatalha {
 			System.out.print("-");
 		}
 	}
-
-	public void animacaoAtaqueX() {
-		System.out.print("\033[H\033[2J");
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-		for (int y = 0; y < this.height; y++) {
-			for (int x = 0; x < this.width; x++) {
-				System.out.print(" ");
-				if (y == 1 && x == 3) {
-					System.out.print("[" + treinadorX.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 1 && x == 22) {
-					System.out.print("[" + treinadorY.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 2 && x == 6) {
-					System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 2 && x == 30) {
-					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 4 && x == 23) {
-					System.out.print("((ง'̀-'́)-");
-				}
-				if (y == 4 && x == 25) {
-					System.out.print("*ᕕ( 0-0 )ᕗ");
-				}
-			}
-			System.out.print("\n");
-		}
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-	}
-
-	public void animacaoAtaqueXS() {
-		System.out.print("\033[H\033[2J");
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-		for (int y = 0; y < this.height; y++) {
-			for (int x = 0; x < this.width; x++) {
-				System.out.print(" ");
-				if (y == 1 && x == 3) {
-					System.out.print("[" + treinadorX.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 1 && x == 22) {
-					System.out.print("[" + treinadorY.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 2 && x == 6) {
-					System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 2 && x == 30) {
-					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 4 && x == 23) {
-					System.out.print("((ง'̀-'́)ง");
-				}
-				if (y == 4 && x == 25) {
-					System.out.print("ᕕ( ᐛ )ᕗ");
-				}
-			}
-			System.out.print("\n");
-		}
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-	}
-
-	public void animacaoAtaqueY() {
-		System.out.print("\033[H\033[2J");
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-		for (int y = 0; y < this.height; y++) {
-			for (int x = 0; x < this.width; x++) {
-				System.out.print(" ");
-				if (y == 1 && x == 3) {
-					System.out.print("[" + treinadorX.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 1 && x == 22) {
-					System.out.print("[" + treinadorY.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 2 && x == 6) {
-					System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 2 && x == 30) {
-					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 4 && x == 1) {
-					System.out.print("((ง0-0 )ง*");
-				}
-				if (y == 4 && x == 3) {
-					System.out.print("--( ᐛ )ᕗ");
-				}
-			}
-			System.out.print("\n");
-		}
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-	}
-
-	public void animacaoAtaqueYS() {
-		System.out.print("\033[H\033[2J");
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-		for (int y = 0; y < this.height; y++) {
-			for (int x = 0; x < this.width; x++) {
-				System.out.print(" ");
-				if (y == 1 && x == 3) {
-					System.out.print("[" + treinadorX.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 1 && x == 22) {
-					System.out.print("[" + treinadorY.getMonstroAtivo().getNomeMonstro() + "]");
-				}
-				if (y == 2 && x == 6) {
-					System.out.print(treinadorX.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 2 && x == 30) {
-					System.out.print(treinadorY.getMonstroAtivo().getHp() + "HP");
-				}
-				if (y == 4 && x == 1) {
-					System.out.print("((ง'̀-'́)ง");
-				}
-				if (y == 4 && x == 3) {
-					System.out.print("ᕕ( ᐛ )ᕗ");
-				}
-			}
-			System.out.print("\n");
-		}
-		for (int i = 1; i < this.width; i++) {
-			System.out.print("-");
-		}
-	}
-
 	public void anuncioVitoria(Treinador treinador) {
 		System.out.println("\n\n\nFIM DE JOGO! O VENCEDOR É \n" + treinador.getNomeTreinador());
 	}
-
 }

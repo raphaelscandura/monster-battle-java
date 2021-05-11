@@ -6,12 +6,17 @@ import java.util.*;
 /**
  * @author Michael Carlos DamascenoLima
  */
-public class FabricaMonstro {
+public class DadosMonstros {
 	
-	ArrayList<Monstros> listaMonstros = new ArrayList<Monstros>();
+	private ArrayList<Monstros> listaMonstros = new ArrayList<Monstros>();
     private Ataque ataqueX = new Ataque();
     private Ataque ataqueY = new Ataque();
     Monstros monstro;
+
+    
+    public ArrayList<Monstros> getDataMonstros() {
+        return listaMonstros;
+    }
     
     public void instanciarMonstros() {
         ataqueX.setAtaque(17, "eletrico", "Golpe do Trov�o");
