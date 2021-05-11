@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @author Rafael Scandura
+ * @author Raphael Scandura
  */
 public class MenuEscolhas {
 
@@ -19,17 +19,17 @@ public class MenuEscolhas {
 
         Scanner respostaEscolha = new Scanner(System.in);
 
-        System.out.println("BEM VINDO AO MENU DE ESCOLHAS \n");
+        System.out.println("BEM VINDO AO JOGO DE BATALHA DE MONSTROS\n");
         
         for(int i = 1; i <= 2; i++){
         	
-        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID (numero 1 � 6) \n");
+        	System.out.println("Jogador " + i + " Escolha 3 monstros de acordo com o ID\n");
         	dadosMonstros.instanciarMonstros();        	
         	listaDeMonstros = dadosMonstros.getMonstros();
         	int cont = 1;
                 do {
                         dadosMonstros.imprimirMonstros();
-                    System.out.println("Escolha seu " + cont +"� Monstro: \n");
+                    System.out.println("\nEscolha seu " + cont +"º Monstro: \n");
                     escolhaJogador = respostaEscolha.nextInt();
                     Monstros monstroEscolhido = listaDeMonstros.get(escolhaJogador);
                     if(i == 1) {

@@ -3,7 +3,7 @@ package br.com.anhembi.batalha.control;
 import br.com.anhembi.batalha.model.Monstros;
 
 /**
- * Raphael Scandura
+ * @author Raphael Scandura
  */
 
 public class CalculoBatalha {

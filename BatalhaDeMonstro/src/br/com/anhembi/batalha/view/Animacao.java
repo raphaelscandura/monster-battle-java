@@ -3,6 +3,10 @@ package br.com.anhembi.batalha.view;
 import br.com.anhembi.batalha.model.Treinador;
 import br.com.anhembi.batalha.model.Monstros;
 
+/**
+ * @author Michael Carlos Damasceno Lima
+ */
+
 public class Animacao {
     private int width;
     private int height;

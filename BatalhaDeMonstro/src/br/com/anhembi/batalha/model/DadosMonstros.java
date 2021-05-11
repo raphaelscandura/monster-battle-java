@@ -18,7 +18,7 @@ public class DadosMonstros {
     }
     
     public void instanciarMonstros() {
-        Ataque ataqueX = new Ataque(17, "eletrico", "Golpe do Trov�o");
+        Ataque ataqueX = new Ataque(17, "eletrico", "Golpe do Trovão");
         Ataque ataqueY = new Ataque(15, "voador", "Mergulho do Alto");
         monstro = new Monstros("Flair", "eletrico", ataqueX, ataqueY, 7, 20, 8, 20, "pedra");
         listaMonstros.add(monstro);        
@@ -52,9 +52,11 @@ public class DadosMonstros {
     public void imprimirMonstros() {
     	for(int i = 0; i < listaMonstros.size();i++) {
     		Monstros monstro = listaMonstros.get(i);
+            System.out.println("---------------------------------------------------");
     		System.out.println("ID: " + i);
     		System.out.println("Nome: " + monstro.getNomeMonstro());
     		System.out.println("Tipo: " + monstro.getTipo());
+            System.out.println("Fraqueza: " + monstro.getFraqueza());
     		System.out.println("HP: " + monstro.getHp());
     		System.out.println("Ataque: " + monstro.getForca());
     		System.out.println("Defesa: " + monstro.getDefesa());

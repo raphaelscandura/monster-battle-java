@@ -68,6 +68,7 @@ public class Treinador {
 				System.out.println("ID: " + i);
 				System.out.println("Nome: " + monstroX.getNomeMonstro());
 				System.out.println("Tipo: " + monstroX.getTipo());
+				System.out.println("Fraqueza: " + monstroX.getForca());
 				System.out.println("HP: " + vida);
 				System.out.println("Ataque: " + monstroX.getForca());
 				System.out.println("Defesa: " + monstroX.getDefesa());
