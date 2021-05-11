@@ -1,9 +1,6 @@
 package br.com.anhembi.batalha.control;
 
 
-import br.com.anhembi.batalha.control.*;
-
-
 /**
  * @author Raphael Scandura
  */
@@ -13,7 +10,7 @@ public class Ataque {
 	private String tipoAtaque;
 	private String nomeAtaque;
 
-	public void setAtaque(int poderAtaque, String tipoAtaque, String nomeAtaque) {
+	public Ataque(int poderAtaque, String tipoAtaque, String nomeAtaque) {
 		this.poderAtaque = poderAtaque;
 		this.tipoAtaque = tipoAtaque;
 		this.nomeAtaque = nomeAtaque;

@@ -7,8 +7,6 @@ public class Animacao {
     private int height;
     private Treinador treinadorX;
     private Treinador treinadorY;
-    private boolean superEfetivoX;
-    private boolean superEfetivoY;
     private String[] animacoesX = {"((ง'̀-'́)ง","((ง'̀-'́)-", "((ง0-0)ง*"};
     private String[] animacoesY = {"ᕕ( ᐛ )ᕗ","--( ᐛ )ᕗ", "*ᕕ( 0-0 )ᕗ"};
 
@@ -23,7 +21,7 @@ public class Animacao {
 		try {
 			Thread.sleep(i);
 		} catch (Exception e) {
-			System.out.println(e);
+            
 		}
 	}
 
@@ -83,7 +81,7 @@ public class Animacao {
         freezeScreen(500);
 	}
 
-	public void ataqueY(boolean ehSuperEfetivo) {
+	public void ataqueY(boolean ehSuperEfetivoY) {
         int bonecoX = 2;
         int bonecoY = 1;
         for (int l =0; l < 5; l++) {
@@ -125,7 +123,7 @@ public class Animacao {
                 }
                 System.out.print("\n");
             }
-            if(superEfetivoY)
+            if(ehSuperEfetivoY)
                 System.out.println("\tSuper Efetivo!!");
             System.out.print("\n");
             for (int i = 1; i < this.width; i++) {

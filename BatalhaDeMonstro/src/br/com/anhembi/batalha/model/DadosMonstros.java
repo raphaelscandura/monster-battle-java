@@ -11,44 +11,41 @@ import java.util.*;
 public class DadosMonstros {
 	
 	private ArrayList<Monstros> listaMonstros = new ArrayList<Monstros>();
-    private Ataque ataqueX = new Ataque();
-    private Ataque ataqueY = new Ataque();
     Monstros monstro;
-
     
     public ArrayList<Monstros> getDataMonstros() {
         return listaMonstros;
     }
     
     public void instanciarMonstros() {
-        ataqueX.setAtaque(17, "eletrico", "Golpe do Trov�o");
-        ataqueY.setAtaque(15, "voador", "Mergulho do Alto");
+        Ataque ataqueX = new Ataque(17, "eletrico", "Golpe do Trov�o");
+        Ataque ataqueY = new Ataque(15, "voador", "Mergulho do Alto");
         monstro = new Monstros("Flair", "eletrico", ataqueX, ataqueY, 7, 20, 8, 20, "pedra");
         listaMonstros.add(monstro);        
         
-        ataqueX.setAtaque(17, "fogo", "Soco Flamejante");
-        ataqueY.setAtaque(7, "grama", "Grama Quente");
-        monstro = new Monstros("Fogareu", "fogo", ataqueX, ataqueY, 15, 18, 9, 13, "agua"); 
+        Ataque ataqueO = new Ataque(17, "fogo", "Soco Flamejante");
+        Ataque ataqueP = new Ataque(7, "grama", "Grama Quente");
+        monstro = new Monstros("Fogareu", "fogo", ataqueO, ataqueP, 15, 18, 9, 13, "agua"); 
         listaMonstros.add(monstro);
     
-        ataqueX.setAtaque(12, "grama", "Pinhão");
-        ataqueY.setAtaque(16, "agua", "Suco de Fruta");
-        monstro = new Monstros("Goiabao", "grama", ataqueX, ataqueY, 10, 17, 14, 8, "fogo");
+        Ataque ataqueA = new Ataque(12, "grama", "Pinhão");
+        Ataque ataqueB = new Ataque(16, "agua", "Suco de Fruta");
+        monstro = new Monstros("Goiabao", "grama", ataqueA, ataqueB, 10, 17, 14, 8, "fogo");
         listaMonstros.add(monstro);
     
-        ataqueX.setAtaque(17, "agua", "Fonte Gelada");
-        ataqueY.setAtaque(16, "fogo", "Magma");
-        monstro = new Monstros("Liquides", "agua", ataqueX, ataqueY, 14, 15, 15, 13, "grama");
+        Ataque ataqueC = new Ataque(17, "agua", "Fonte Gelada");
+        Ataque ataqueD = new Ataque(16, "fogo", "Magma");
+        monstro = new Monstros("Liquides", "agua", ataqueC, ataqueD, 14, 15, 15, 13, "grama");
         listaMonstros.add(monstro);
     
-        ataqueX.setAtaque(16, "pedra", "Soco Petrificador");
-        ataqueY.setAtaque(19, "eletrico", "Eletrocutar");
-        monstro = new Monstros("Rocking", "pedra", ataqueX, ataqueY, 12, 19, 17, 10, "voador");
+        Ataque ataqueE = new Ataque(16, "pedra", "Soco Petrificador");
+        Ataque ataqueF = new Ataque(19, "eletrico", "Eletrocutar");
+        monstro = new Monstros("Rocking", "pedra", ataqueE, ataqueF, 12, 19, 17, 10, "voador");
         listaMonstros.add(monstro);
     
-        ataqueX.setAtaque(11, "voador", "Espada de Vento");
-        ataqueY.setAtaque(14, "pedra", "Ciclone Bomba");
-        monstro = new Monstros("Satoshi", "voador", ataqueX, ataqueY, 11, 14, 10, 18, "eletrico");
+        Ataque ataqueG = new Ataque(11, "voador", "Espada de Vento");
+        Ataque ataqueH = new Ataque(14, "pedra", "Ciclone Bomba");
+        monstro = new Monstros("Satoshi", "voador", ataqueG, ataqueH, 11, 14, 10, 18, "eletrico");
         listaMonstros.add(monstro);
     } 
     
@@ -62,6 +59,8 @@ public class DadosMonstros {
     		System.out.println("Ataque: " + monstro.getForca());
     		System.out.println("Defesa: " + monstro.getDefesa());
     		System.out.println("Velocidade: " + monstro.getVelocidade() + "\n");
+            System.out.println("Ataque 1: " + monstro.getAtaques1().getNome());
+            System.out.println("Ataque 2: " + monstro.getAtaques2().getNome());
     	}
     }
     
